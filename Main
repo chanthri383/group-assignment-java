@@ -33,23 +33,22 @@ public class Main
                                                         if (words[s].equals("."))
                                                         {
                                                             count++;
-                                                            last=s;//last is set to index of second period
                                                         }
                                                     }
                                                 
                                                     user= words[s].substring(0,words[s].indexOf("@"));
 						                                      	if (count>=2)//university email
                                                         {
-                                                            sub = words[s].substring(words[s].indexOf("@")+1,words[s].indexOf("."));
-                                                            domain=words[s].substring(words[s].indexOf(".")+1,last);
-                                                            extension=words[s].substring(last);
-                                                            //needs email constructor
-                                                        }
-                                                    else//standard email
+                                                        sub = words[s].substring(words[s].indexOf("@")+1,words[s].indexOf("."));
+                                                        domain=words[s].substring(words[s].indexOf(".")+1,words[s].lastIndexOf("."));
+							extension=words[s].substring(words[s].lastIndexOf("."));
+							//university constructor
+                                                  	}
+                                                        else//standard email
                                                         {
                                                         domain=words[s].substring(words[s].indexOf("@")+1,words[s].indexOf("."));
-							                                          extension=words[s].substring(words[s].indexOf("."));
-                                                        //needs university email constructor
+							extension=words[s].substring(words[s].indexOf("."));
+							//email constructor
                                                         }
 						}
 					
