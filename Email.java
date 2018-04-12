@@ -15,7 +15,7 @@ public class Email
     domain = domain_;
     extension = extension_;
   }
-  public String getValue()
+  public int getValue()
   {
       return 0;
     }
