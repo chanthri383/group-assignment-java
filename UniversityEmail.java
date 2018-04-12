@@ -16,6 +16,22 @@ public class UniversityEmail extends Email
         department = department_;
         code = code_;
     }   
-    public void getCode()
+    public void findCode()//assigns code based on department
     {
+            String[] departments = {"","art","chee","chem","coe","cs","egr","polsci"};
+            for (int x=0;x<9;x++)
+            {
+                    if (department==departments[x])
+                    {
+                            code=x;
+                    }	
+            }
+    }	
+
+    public int getCode()
+    {
+            return code;	
+    }
+}
+
         
