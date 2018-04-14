@@ -69,6 +69,6 @@ public class Main {
 		}
 
 		fs.close();
-		Scanner user_input = new Scanner;
+		Scanner user_input = new Scanner();
 	}
 }
