@@ -72,6 +72,11 @@ public class Main {
 		Scanner user_input = new Scanner(System.in);
 		int output_choice; //input to print out certain emails
 		output_choice = user_input.nextInt();
+		if(out_choice == 0)
+		{
+			for(int i = 0; i < num_of_emails; i++)
+			{
+				instanceof
 		
 	}
 }
