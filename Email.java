@@ -19,4 +19,11 @@ public class Email
   {
       return 0;
     }
+  public String toString()
+  {
+    String text = "";
+    
+    text = username + "@" + domain + "." + extension;
+    
+    return text;
 }
