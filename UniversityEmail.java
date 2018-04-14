@@ -36,7 +36,7 @@ public class UniversityEmail extends Email
     {
         String text = "";
         
-        text = username + "@" + subdomain + "." + domain + "." + extenstion;
+        text = username + "@" + department + "." + domain + "." + extenstion;
         
         return text;
 }
