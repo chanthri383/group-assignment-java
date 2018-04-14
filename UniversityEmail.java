@@ -10,18 +10,18 @@ public class UniversityEmail extends Email
     code = 0;
     }
     
-    public UniversityEmail(String username_, String domain_, String extension_,String department_,int code_)
+    public UniversityEmail(String username_, String domain_, String extension_,String department_)
     {
         super(username_,domain_,extension_);
         department = department_;
-        code = code_;
+        findCode();
     }   
     public void findCode()//assigns code based on department
     {
             String[] departments = {"","art","chee","chem","coe","cs","egr","polsci"};
-            for (int x=0;x<9;x++)
+            for (int x=0;x<8;x++)
             {
-                    if (department==departments[x])
+                    if (department.equals(departments[x]))
                     {
                             code=x;
                     }	
