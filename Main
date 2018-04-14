@@ -80,7 +80,7 @@ public class Main {
 				if(emails[i] instanceof Email)
 				{		
 				PrintWriter output_stream = new PrintWriter(new FileOutputStream("out.txt"));
-				outout_stream.print(Emails[i]);
+				output_stream.print(Emails[i]);
 		
 	}
 }
