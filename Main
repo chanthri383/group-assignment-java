@@ -77,9 +77,9 @@ public class Main {
 		{
 			for(int i = 0; i < num_of_emails; i++)
 			{
-				if(emails[i] instanceof UniversityEmail)
-				{
-					
+				if(emails[i] instanceof Email)
+				{		
+				PrintWriter output_stream = new PrintWriter; 
 		
 	}
 }
