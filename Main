@@ -81,6 +81,7 @@ public class Main {
 				{		
 				PrintWriter output_stream = new PrintWriter(new FileOutputStream("out.txt"));
 				output_stream.print(emails[i]);
+				output_stream.close();
 		
 	}
 }
