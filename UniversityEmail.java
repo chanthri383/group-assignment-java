@@ -32,6 +32,13 @@ public class UniversityEmail extends Email
     {
             return code;	
     }
+    public String toString()
+    {
+        String text = "";
+        
+        text = username + "@" + subdomain + "." + domain + "." + extenstion;
+        
+        return text;
 }
 
         
