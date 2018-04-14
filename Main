@@ -70,6 +70,8 @@ public class Main {
 
 		fs.close();
 		Scanner user_input = new Scanner(System.in);
-		int output_choice;
+		int output_choice; //input to print out certain emails
+		user_input.nextInt;
+		
 	}
 }
