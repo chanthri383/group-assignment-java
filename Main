@@ -70,5 +70,6 @@ public class Main {
 
 		fs.close();
 		Scanner user_input = new Scanner(System.in);
+		int output_choice;
 	}
 }
