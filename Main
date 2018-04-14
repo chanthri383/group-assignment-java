@@ -1,56 +1,73 @@
 import java.io.*;
 import java.util.Scanner;
-public class Main 
-{
-//still needs catch, array for objects and constructors
-	public static void main (String[]args)
-	{
-                int last;
-		File in=null;
-		File out=null;
-		String user,domain,extension,sub;
-		try
-		{
-			in = new File("input.txt");
-			out = new File("output.txt");
-    }
-    catch()
-    {}
-    Scanner fs = new Scanner(in);
-                
-			while (fs.hasNext())//sorts and initalizes emails 
-			{
-				String line=fs.nextLine();	
-				String words[]=line.split(" ");//seperates by spaces
-				for (int s=0;s<words.length;s++)
-					{
-						if (words[s].contains("@"))//if it contains @ it must be an email
-						{
-                                                    
-                                                    int count=0;
-                                                    for(int p=0;p<words[s].length();p++) 
-                                                    {
-                                                        if (words[s].equals("."))
-                                                        {
-                                                            count++;
-                                                        }
-                                                    }
-                                                
-                                                    user= words[s].substring(0,words[s].indexOf("@"));
-						                                      	if (count>=2)//university email
-                                                        {
-                                                        sub = words[s].substring(words[s].indexOf("@")+1,words[s].indexOf("."));
-                                                        domain=words[s].substring(words[s].indexOf(".")+1,words[s].lastIndexOf("."));
-							extension=words[s].substring(words[s].lastIndexOf("."));
-							//university constructor
-                                                  	}
-                                                        else//standard email
-                                                        {
-                                                        domain=words[s].substring(words[s].indexOf("@")+1,words[s].indexOf("."));
-							extension=words[s].substring(words[s].indexOf("."));
-							//email constructor
-                                                        }
-						}
-					
-					}
+public class Main {
+	public static void main(String[] args) {
+		int last;
+		int num_of_emails = 0, i = 0;
+		File in = null;
+		File out = null;
+		String user, domain, extension, sub;
+		Scanner fs = null;
+		Email emails[];
+
+		in = new File("input.txt");
+		out = new File("output.txt");
+
+		try {
+			fs = new Scanner(in);
+
+			while (fs.hasNext()) { // counts emails in file, so we know how big to create the array of email objects
+				if (fs.next().contains("@"))
+					num_of_emails++;
 			}
+
+			fs.close();
+			fs = new Scanner(in); // get ready to reread the input file
+		} catch (FileNotFoundException e) {
+			System.exit(1);
+		}
+
+		emails = new Email[num_of_emails];
+		num_of_emails = 0;
+
+		while (fs.hasNext())//sorts and initalizes emails
+		{
+			String line = fs.nextLine();
+			String words[] = line.split(" ");//seperates by spaces
+			for (int s = 0; s < words.length; s++) {
+				if (words[s].contains("@"))//if it contains @ it must be an email
+				{
+
+					int count = 0;
+					for (int p = 0; p < words[s].length(); p++) {
+						if (words[s].charAt(p) == '.') {
+							count++;
+						}
+					}
+
+					user = words[s].substring(0, words[s].indexOf("@"));
+					if (count >= 2)//university email
+					{
+						sub = words[s].substring(words[s].indexOf("@") + 1, words[s].indexOf("."));
+						domain = words[s].substring(words[s].indexOf(".") + 1, words[s].lastIndexOf("."));
+						extension = words[s].substring(words[s].lastIndexOf(".") + 1);
+						//university constructor
+
+						emails[i] = new UniversityEmail(user, domain, extension, sub);
+						i++;
+					} else//standard email
+					{
+						domain = words[s].substring(words[s].indexOf("@") + 1, words[s].indexOf("."));
+						extension = words[s].substring(words[s].indexOf(".") + 1);
+						//email constructor
+						emails[i] = new Email(user, domain, extension);
+						i++;
+					}
+				}
+
+			}
+		}
+
+		fs.close();
+	}
+}
