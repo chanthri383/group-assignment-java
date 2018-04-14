@@ -79,7 +79,7 @@ public class Main {
 			{
 				if(emails[i] instanceof Email)
 				{		
-				PrintWriter output_stream = new PrintWriter(new FileOutputStream(String output.txt)); 
+				PrintWriter output_stream = new PrintWriter(new FileOutputStream(output.txt)); 
 		
 	}
 }
