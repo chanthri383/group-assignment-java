@@ -100,7 +100,7 @@ public class Main {
 				if((emails[i] instanceof UniversityEmail))
 				{		
 				output_stream.println(emails[i]);
-				
+				}
 				}
 		}
 		output_stream.close();
