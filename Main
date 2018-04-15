@@ -73,13 +73,13 @@ public class Main {
 		int output_choice; //input to print out certain emails
 		output_choice = user_input.nextInt();
 		num_of_emails = i;
+		PrintWriter output_stream = new PrintWriter(new FileOutputStream("out.txt"));
 		if(out_choice == 0)
 		{
 			for(int i = 0; i < num_of_emails; i++)
 			{
 				if(!(emails[i] instanceof UniversityEmail))
 				{		
-				PrintWriter output_stream = new PrintWriter(new FileOutputStream("out.txt"));
 				output_stream.print(emails[i]);
 				output_stream.close();
 				
