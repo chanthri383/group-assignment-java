@@ -89,10 +89,19 @@ public class Main {
 			{
 				if((emails[i] instanceof UniversityEmail))
 				{
-					if(out_choice == emails[i].getCode())
+				if(out_choice == emails[i].getCode())
 				output_stream.print(emails[i]);
 				}
 				}
+		else if(out_choice == 8)
+		{	for(int i = 0; i < num_of_emails; i++)
+			{
+				if(!(emails[i] instanceof UniversityEmail))
+				{		
+				output_stream.print(emails[i]);
+				
+				}
+		}
 		output_stream.close();
 	}
 }
