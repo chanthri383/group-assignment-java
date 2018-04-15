@@ -83,7 +83,9 @@ public class Main {
 				output_stream.print(emails[i]);
 				
 				}
-		}
+		}else if(out_choice >=1 || out_choice <=7)
+		{
+		
 		output_stream.close();
 	}
 }
