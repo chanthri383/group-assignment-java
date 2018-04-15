@@ -36,7 +36,7 @@ public class UniversityEmail extends Email
     {
         String text = "";
         
-        text = super.toString().substring(0,indexOf('@')) + department + "." + super.toString().substring(super.toString().indexOf('@') + 1) ;
+        text = super.toString().substring(0,super.toString().indexOf('@')) + department + "." + super.toString().substring(super.toString().indexOf('@') + 1) ;
         
         return text;
 }
