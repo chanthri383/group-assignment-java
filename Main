@@ -81,9 +81,9 @@ public class Main {
 				if(!(emails[i] instanceof UniversityEmail))
 				{		
 				output_stream.print(emails[i]);
-				output_stream.close();
 				
 				}
 		}
+		output_stream.close();
 	}
 }
